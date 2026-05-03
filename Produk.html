@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Favicon pariabriq.png">
+
+    <title>Pariabriq - Pariaman Briquette</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Pengaturan Dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #fcfcfc;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Navigasi */
+        header {
+            background-color: #222;
+            color: #fff;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            color: #e67e22;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #e67e22;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80') center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #e67e22;
+        }
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        .btn {
+            background-color: #e67e22;
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background-color: #d35400;
+        }
+
+        /* Seksi Umum */
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 28px;
+            color: #222;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #e67e22;
+            margin: 10px auto 0;
+        }
+        section {
+            padding: 80px 0;
+        }
+
+      /* Deskripsi Produk (BARU) */
+        .deskripsi-box {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        .deskripsi-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        .deskripsi-text h3 {
+            font-size: 24px;
+            color: #e67e22;
+            margin-bottom: 15px;
+        }
+        .deskripsi-img {
+            flex: 1;
+            min-width: 300px;
+        }
+        .deskripsi-img img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+      /* Sebelum: Efek Mengangkat */
+        .deskripsi-img:hover {
+            transform: translateY(-5px);
+            }
+
+/* SESUDAH: Efek Zoom Halus */
+        .deskripsi-img{
+    /* ... properti lainnya ... */
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Kunci kehalusan */
+            border: 1px solid transparent;
+}
+
+        .deskripsi-img:hover {
+            transform: scale(1.03); /* Membesar 3% */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+            border: 1px solid #e67e22; /* Highlight warna brand */
+}
+
+        
+        /* Keunggulan */
+        .keunggulan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        .keunggulan-item {
+            background: #fff;
+            padding: 30px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+         .keunggulan-item:hover {
+            transform: translateY(-5px);
+            }
+             .keunggulan-item{
+    /* ... properti lainnya ... */
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Kunci kehalusan */
+            border: 1px solid transparent;
+}
+          .keunggulan-item:hover {
+            transform: scale(1.03); /* Membesar 3% */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+            border: 1px solid #e67e22; /* Highlight warna brand */
+}
+        .keunggulan-item h3 {
+            font-size: 18px;
+            margin: 15px 0 10px;
+            color: #e67e22;
+        }
+        .icon {
+            font-size: 40px;
+        }
+
+        /* Produk */
+        .produk-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .produk-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            padding-bottom: 25px;
+            transition: transform 0.3s;
+        }
+        .produk-card:hover {
+            transform: translateY(-5px);
+        }
+        .produk-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+        .produk-info {
+            padding: 20px;
+        }
+        .produk-info h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #222;
+        }
+        .produk-info p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        .harga {
+            font-size: 22px;
+            font-weight: 700;
+            color: #e67e22;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .btn-wa {
+            background-color: #25D366; /* Warna WhatsApp */
+            display: inline-block;
+            width: 80%;
+        }
+        .btn-wa:hover {
+            background-color: #1ebe57;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #ccc;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .footer-col p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .copyright {
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            font-size: 12px;
+        }
+
+        /* Responsif untuk Mobile */
+        @media (max-width: 768px) {
+            nav {
+                display: none; /* Navigasi disembunyikan di layar sangat kecil agar rapi */
+            }
+            .hero h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>PARIABRIQ</h1>
+            <nav>
+                <a href="#beranda">Beranda</a>
+                <a href="#deskripsi">Tentang</a>
+                <a href="#keunggulan">Keunggulan</a>
+                <a href="#produk">Produk</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="beranda" class="hero">
+        <div class="container">
+            <h2>Pariaman Briquette Premium</h2>
+            <p>100% Briket Arang Tempurung Kelapa Berkualitas Tinggi. Menghasilkan panas maksimal, minim abu, dan ramah lingkungan untuk kebutuhan memanggang Anda.</p>
+            <a href="#produk" class="btn">Lihat Produk</a>
+        </div>
+    </section>
+ <section id="deskripsi">
+        <div class="container">
+            <h2 class="section-title">Tentang Pariabriq</h2>
+            <div class="deskripsi-box">
+                <div class="deskripsi-text">
+                    <h3>Inovasi Arang dari Pariaman</h3>
+                    <p><strong>Pariabriq</strong> adalah merk briket arang premium yang berasal dari Kota Pariaman, Sumatera Barat. Kami memanfaatkan limbah tempurung kelapa yang melimpah di pesisir pantai untuk diproses secara modern menjadi briket berkualitas ekspor.</p>
+                    <br>
+                    <p>Produk kami dirancang khusus untuk memenuhi kebutuhan energi yang efisien. Melalui proses karbonisasi tinggi, Pariabriq mampu menghasilkan bara api yang lebih konsisten dibandingkan arang kayu biasa, menjadikannya pilihan utama bagi pecinta BBQ, rumah makan, hingga kebutuhan industri rumah tangga yang peduli lingkungan.</p>
+                </div>
+                <div class="deskripsi-img">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&q=80" alt="Tentang Pariabriq">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="keunggulan" style="background-color: #f9f9f9;">
+        <div class="container">
+            <h2 class="section-title">Kenapa Memilih Pariabriq?</h2>
+            <div class="keunggulan-grid">
+                <div class="keunggulan-item">
+                    <div class="icon">🥥</div>
+                    <h3>100% Batok Kelapa</h3>
+                    <p>Terbuat dari tempurung kelapa pilihan asli Pariaman tanpa bahan kimia berbahaya.</p>
+                </div>
+                <div class="keunggulan-item">
+                    <div class="icon">🔥</div>
+                    <h3>Panas Tahan Lama</h3>
+                    <p>Menghasilkan suhu panas tinggi (High Heat) yang stabil dan tahan lama saat digunakan.</p>
+                </div>
+                <div class="keunggulan-item">
+                    <div class="icon">💨</div>
+                    <h3>Sedikit Abu</h3>
+                    <p>Pembakaran sempurna meninggalkan sangat sedikit abu (Low Ash), makanan tetap bersih.</p>
+                </div>
+                <div class="keunggulan-item">
+                    <div class="icon">🌍</div>
+                    <h3>Ramah Lingkungan</h3>
+                    <p>Eco Friendly, tidak menghasilkan asap pekat yang mengganggu pernapasan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="produk">
+        <div class="container">
+            <h2 class="section-title">Katalog Produk</h2>
+            <div class="produk-grid">
+                
+                <div class="produk-card">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=500&q=80" alt="Pariabriq 100 gram">
+                    <div class="produk-info">
+                        <h3>Pariabriq 100 Gram</h3>
+                        <p>Isi ± 20 pcs (Berat satuan 5g). Cocok untuk pemakaian skala kecil / mencoba kualitas.</p>
+                        <span class="harga">Rp 20.000</span>
+                        <a href="https://api.whatsapp.com/send?phone=6283164804045&text=Halo%20Kak%20Febri,%20saya%20ingin%20memesan%20Pariabriq%20kemasan%20100%20Gram." target="_blank" class="btn btn-wa">Beli via WhatsApp</a>
+                    </div>
+                </div>
+
+                <div class="produk-card">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=500&q=80" alt="Pariabriq 200 gram">
+                    <div class="produk-info">
+                        <h3>Pariabriq 200 Gram</h3>
+                        <p>Isi ± 20 pcs (Berat satuan 10g). Pilihan pas untuk acara barbeque keluarga.</p>
+                        <span class="harga">Rp 40.000</span>
+                        <a href="https://api.whatsapp.com/send?phone=6283164804045&text=Halo%20Kak%20Febri,%20saya%20ingin%20memesan%20Pariabriq%20kemasan%20200%20Gram." target="_blank" class="btn btn-wa">Beli via WhatsApp</a>
+                    </div>
+                </div>
+
+                <div class="produk-card">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=500&q=80" alt="Pariabriq 500 gram">
+                    <div class="produk-info">
+                        <h3>Pariabriq 500 Gram</h3>
+                        <p>Ukuran ekonomis untuk kebutuhan usaha kuliner atau pemakaian rutin.</p>
+                        <span class="harga">Rp 90.000</span>
+                        <a href="https://api.whatsapp.com/send?phone=6283164804045&text=Halo%20Kak%20Febri,%20saya%20ingin%20memesan%20Pariabriq%20kemasan%20500%20Gram." target="_blank" class="btn btn-wa">Beli via WhatsApp</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>PARIABRIQ</h4>
+                    <p>Pariaman Briquette - 100% Coconut Charcoal.</p>
+                    <p>High Heat, Low Ash, Eco Friendly.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Hubungi Kami</h4>
+                    <p><strong>Contact Person:</strong> Febrian (+62 831-6480-4045)</p>
+                    <p><strong>Email:</strong> kurniansyahfebrian111@gmail.com.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Alamat & Sosial Media</h4>
+                    <p>📍 Padang / Pariaman, Sumatera Barat, Indonesia</p>
+                    <p>📷 Instagram: @pariabriq</p>
+                    <p>📱 TikTok: @pariabriq_id</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Pariabriq. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
